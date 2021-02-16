@@ -1,0 +1,9 @@
+.main{
+    width: 90%;
+    height: 88%;
+    max-height: 1080px;
+    min-height: 600px;
+    margin: 1em auto 0 auto;
+    
+    @apply bg-blue-100;
+}

@@ -1,0 +1,10 @@
+.container-tasks{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y  proximity;
+}
+li{
+    scroll-snap-align: start;
+    margin-bottom: 1em;
+}
