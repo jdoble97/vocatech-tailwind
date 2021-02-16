@@ -1,29 +1,8 @@
 <div class="container-tasks">
-    <ul class="divide-y divide-yellow-500">
-        <li>
-            <app-task></app-task>
+    <ul class="divide-y divide-yellow-500" *ngFor="let item of fakeTasks">
+        <li (click)="selectTask(item)">
+            <app-task [task]="item" [refContainerParent]="containerRef"></app-task>
         </li>
-        <li>
-            <app-task></app-task>
-        </li>
-        <li>
-            <app-task></app-task>
-        </li>
-        <li>
-            <app-task></app-task>
-        </li>
-        <li>
-            <app-task></app-task>
-        </li>
-        <li>
-            <app-task></app-task>
-        </li>
-        <li>
-            <app-task></app-task>
-        </li>
-        <li>
-            <app-task></app-task>
-        </li>
-
     </ul>
+    <ng-template generateModal></ng-template>
 </div>

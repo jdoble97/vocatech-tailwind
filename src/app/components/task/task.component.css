@@ -1,11 +1,14 @@
-div{
-
+*{
+    @apply text-indigo-900;
+}
+.task{
     display: flex;
+    margin: 1em 0;
+    @apply border-l-2 border-blue-600 hover:bg-red-200;
 }
 p{
     width: 70%;
     max-height: 10vh;
-
 }
 
 
@@ -17,3 +20,4 @@ p{
     flex-direction: column;
     justify-content: space-evenly;
 }
+

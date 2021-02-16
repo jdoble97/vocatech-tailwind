@@ -1,5 +1,5 @@
 export default class Task{
     description: string;
-    date: Date;
-    favourite: boolean;
+    date: string;
+    done: boolean;
 }
