@@ -10,14 +10,19 @@ import { ReferencesService } from 'src/app/services/references.service';
 export class ModalDeleteComponent implements OnInit {
 
   @Input() taskToDelete: Task;
-  constructor(private refServices: ReferencesService) { }
+  constructor(private refServices: ReferencesService, private refService: ReferencesService) { }
 
   ngOnInit(): void {
     console.log('La tarea a eliminar:', this.taskToDelete);
-    
+
   }
 
-  cancelDelete(){
+  cancelDelete() {
     this.refServices.vContainerRef.clear();
+  }
+  deleteTask() {
+    console.log('ELemento borrar', this.taskToDelete);
+    this.refServices.deleteData(this.taskToDelete);
+    this.refServices.clearContainer();
   }
 }

@@ -12,7 +12,7 @@ import { TaskService } from 'src/app/services/task.service';
 export class ContainerTasksComponent implements OnInit {
 
   fakeTasks: Task[];
-  taskDelete: Task;
+  taskToDelete: Task;
   //Vamos a obtener ref del container
   @ViewChild(GenerateModalDirective, {static:true}) generateModal: GenerateModalDirective;
   public containerRef: ViewContainerRef;
@@ -20,12 +20,18 @@ export class ContainerTasksComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.fakeTasks = this.taskService.GetAll();
+    this.fakeTasks = this.refServices.getDataRef()
     this.containerRef = this.generateModal.vc;
     this.refServices.setVContainer(this.containerRef);
   }
-  selectTask(item){
-
+  selectTask(item: Task){
+    this.taskToDelete = item
+  }
+  deleteTask= ():void =>{
+    this.fakeTasks.splice(this.fakeTasks.indexOf(this.taskToDelete),1)
+    this.refServices.vContainerRef.clear()
+    console.log('servicio', this.refServices.getDataRef());
+    
   }
 
 }

@@ -2,7 +2,7 @@
     <div class="modal">
         <h2 class="font-black text-purple-600 ">¿Estás seguro de querer eliminar esta tarea?</h2>
         <div class="actions">
-            <button class="border-red-500 rounded bg-red-600 ring-4 ring-red-400 text-white">
+            <button class="border-red-500 rounded bg-red-600 ring-4 ring-red-400 text-white" (click)="deleteTask()">
                 Eliminar
             </button>
             <button class="border-green-500 rounded bg-green-600 ring-4 ring-green-400 text-white" (click)="cancelDelete()">Cancelar</button>

@@ -12,21 +12,20 @@ import { ModalDeleteComponent } from '../modal-delete/modal-delete.component';
 export class TaskComponent implements OnInit {
 
   @Input() task: Task;
-  @Input() refContainerParent: ViewContainerRef;
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
+  refContainerParent: ViewContainerRef;
+  constructor(private componentFactoryResolver: ComponentFactoryResolver, private refServices: ReferencesService) { }
 
   ngOnInit(): void {
+    this.refContainerParent = this.refServices.getVContainer();
   }
 
   showModal(){
-    // const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ModalDeleteComponent);
-    // const viewContainerRef = this.generateM.vc
-    // viewContainerRef.clear();
-    // const componentRef = viewContainerRef.createComponent<ModalDeleteComponent>(componentFactory);
+
     const cFactory = this.componentFactoryResolver.resolveComponentFactory(ModalDeleteComponent);
     this.refContainerParent.clear();
     const componentRef = this.refContainerParent.createComponent<ModalDeleteComponent>(cFactory);
     //Si quiero pasar datos
     componentRef.instance.taskToDelete = this.task;
+    // componentRef.instance.deleteTask = this.callbackDelete;
   }
 }

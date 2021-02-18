@@ -1,0 +1,26 @@
+.center-form{
+    /* background-color: red; */
+    height: 100%;
+    @apply flex justify-center ;
+}
+
+form{
+    /* background-color: brown; */
+    height: 50%;
+    width: 90%;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    @apply border border-indigo-500 rounded-md bg-indigo-200;
+}
+
+button{
+    width: 30%;
+    margin-bottom: 1em;
+}
+
+input{
+    @apply border border-red-500 focus:outline-none focus:border-blue-500;
+}

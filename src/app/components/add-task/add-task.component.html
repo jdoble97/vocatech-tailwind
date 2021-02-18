@@ -1,0 +1,7 @@
+<div class="center-form">
+    <form [formGroup]="formTask" (ngSubmit)="submitTask()" >
+        <h2 class="text-2xl text-center font-black">Inserte una tarea</h2>
+        <input formControlName="description" type="text" name="description" id="description" placeholder="Recoger la ropa ..."/>
+        <button [disabled]="!formTask.valid" [ngClass]="{'bg-gray-200 line-through': !formTask.valid, 'bg-green-500': formTask.valid}">Crear</button>
+    </form>
+</div>  
