@@ -21,7 +21,6 @@ export class ModalDeleteComponent implements OnInit {
     this.refServices.vContainerRef.clear();
   }
   deleteTask() {
-    console.log('ELemento borrar', this.taskToDelete);
     this.refServices.deleteData(this.taskToDelete);
     this.refServices.clearContainer();
   }

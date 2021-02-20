@@ -32,4 +32,11 @@ export class ReferencesService {
   addTask(task: Task){
     this.dataFake.push(task)
   }
+  //Operaciones en los objetos
+  DoneAndUndoTask(task: Task){
+    let index = this.dataFake.indexOf(task);
+    if(index>-1){
+      this.dataFake[index].done = !this.dataFake[index].done
+    } 
+  }
 }

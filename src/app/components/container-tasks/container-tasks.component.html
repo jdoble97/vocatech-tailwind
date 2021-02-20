@@ -1,8 +1,15 @@
-<div class="container-tasks">
-    <ul class="divide-y divide-yellow-500" >
-        <li *ngFor="let item of fakeTasks" (click)="selectTask(item)">
-            <app-task [task]="item"></app-task>
-        </li>
-    </ul>
-    <ng-template generateModal></ng-template>
-</div>
+<ng-container *ngIf="fakeRequest; else loading">
+    <div class="container-tasks">
+        <ul class="divide-y divide-yellow-500" >
+            <ng-container *ngFor="let item of fakeTasks" >
+                <li *ngIf="!item.done" (click)="selectTask(item)">
+                        <app-task [task]="item"></app-task>
+                </li>
+            </ng-container>
+        </ul>
+        <ng-template generateModal></ng-template>
+    </div>
+</ng-container>
+<ng-template #loading>
+    <app-loading></app-loading>
+</ng-template>

@@ -13,6 +13,8 @@ import { DoneTasksComponent } from './components/done-tasks/done-tasks.component
 import { RoutingModule } from './modules/routing/routing.module';
 //Usando reactiveform
 import {ReactiveFormsModule} from '@angular/forms';
+import { LoadingComponent } from './components/loading/loading.component';
+import { SkeletonComponent } from './components/skeleton/skeleton.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import {ReactiveFormsModule} from '@angular/forms';
     ModalDeleteComponent,
     GenerateModalDirective,
     AddTaskComponent,
-    DoneTasksComponent
+    DoneTasksComponent,
+    LoadingComponent,
+    SkeletonComponent
   ],
   imports: [
     BrowserModule,

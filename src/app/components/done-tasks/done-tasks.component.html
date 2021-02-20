@@ -1,1 +1,13 @@
-<p>done-tasks works!</p>
+<ng-container *ngIf="fakeLoading; else noneData">
+    <div class="container-done">
+        <ul>
+            <li *ngFor="let item of doneTasks">
+                <app-task *ngIf="item.done" [task]="item"></app-task>
+            </li>
+        </ul>
+    </div>
+</ng-container>
+
+<ng-template #noneData>
+    <app-loading></app-loading>
+</ng-template>

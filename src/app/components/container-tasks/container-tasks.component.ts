@@ -13,25 +13,27 @@ export class ContainerTasksComponent implements OnInit {
 
   fakeTasks: Task[];
   taskToDelete: Task;
+  fakeRequest: boolean;
   //Vamos a obtener ref del container
   @ViewChild(GenerateModalDirective, {static:true}) generateModal: GenerateModalDirective;
   public containerRef: ViewContainerRef;
   constructor(private taskService: TaskService, private refServices: ReferencesService) {
+    this.fakeRequest = false;
   }
 
   ngOnInit(): void {
-    this.fakeTasks = this.refServices.getDataRef()
-    this.containerRef = this.generateModal.vc;
-    this.refServices.setVContainer(this.containerRef);
+
+    //Simulación de una llamada al servidor
+    setTimeout(()=>{
+      this.fakeRequest = true;
+      this.fakeTasks = this.refServices.getDataRef()
+      // this.containerRef = this.generateModal.vc;
+      // this.refServices.setVContainer(this.containerRef);
+    },500)
   }
   selectTask(item: Task){
     this.taskToDelete = item
   }
-  deleteTask= ():void =>{
-    this.fakeTasks.splice(this.fakeTasks.indexOf(this.taskToDelete),1)
-    this.refServices.vContainerRef.clear()
-    console.log('servicio', this.refServices.getDataRef());
-    
-  }
+
 
 }

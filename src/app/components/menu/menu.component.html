@@ -1,5 +1,8 @@
 <nav class="menu">
-    <a class="active" routerLink="/tasks">Tareas</a>
-    <a class="active" routerLink="/add">Añadir</a>
-    <a class="active" routerLink="/done-tasks">Finalizadas</a>
+    <a routerLink="/tasks" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+        true}">Tareas</a>
+    <a routerLink="/add" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+        true}">Añadir</a>
+    <a routerLink="/done-tasks" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+        true}">Finalizadas</a>
 </nav>

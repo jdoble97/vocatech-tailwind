@@ -19,8 +19,11 @@ export class TaskComponent implements OnInit {
     this.refContainerParent = this.refServices.getVContainer();
   }
 
-  showModal(){
+  doneTask() {
+    this.refServices.DoneAndUndoTask(this.task)
+  }
 
+  showModal() {
     const cFactory = this.componentFactoryResolver.resolveComponentFactory(ModalDeleteComponent);
     this.refContainerParent.clear();
     const componentRef = this.refContainerParent.createComponent<ModalDeleteComponent>(cFactory);

@@ -4,8 +4,8 @@ import { ContainerTasksComponent } from 'src/app/components/container-tasks/cont
 import { DoneTasksComponent } from 'src/app/components/done-tasks/done-tasks.component';
 
 export const routes: Routes = [
-    {path: 'tasks', component: ContainerTasksComponent},
+    {path: 'tasks', component: ContainerTasksComponent, },
     {path: 'add', component:AddTaskComponent},
     {path:'done-tasks',component:DoneTasksComponent},
-    {path:'', redirectTo:'/tasks',pathMatch:'full'}
+    {path:'', redirectTo:'tasks',pathMatch:'full'}
 ]
